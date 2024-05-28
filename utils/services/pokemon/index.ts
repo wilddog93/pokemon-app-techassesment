@@ -12,12 +12,7 @@ export const getPokemon = async (nameOrId: string) => {
   return response.data;
 };
 
-export const getPokemons = async () => {
-  try {
-    const response = await axios.get(`${prefix}}`);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching Pokemon data:', error);
-    throw error;
-  }
+export const getPokemons = async (params:any) => {
+  const response = await axios.get(`${prefix}`, params);
+  return response.data.results;
 };

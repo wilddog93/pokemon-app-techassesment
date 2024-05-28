@@ -3,17 +3,23 @@
 import { useQuery } from '@tanstack/react-query';
 import { getPokemon, getPokemons } from '@/utils/services/pokemon';
 
-export const usePokemons = (params: any) => {
+type queryParams = {
+  limit: number;
+  offset: number;
+}
+
+export const usePokemons  = ({ limit, offset }: queryParams) => {
   return useQuery({
-    //      ^? const data: string | undefined
-    queryKey: ['pokemon', params],
-    queryFn: () => getPokemons(),
+    queryKey: [{
+      "limit": limit,
+      "offset": offset
+    }],
+    queryFn: () => getPokemons({ params: { limit, offset } }),
   })
 };
 
 export const usePokemon = (nameOrId: string) => {
   return useQuery({
-    //      ^? const data: string | undefined
     queryKey: ['pokemon', nameOrId],
     queryFn: () => getPokemon(nameOrId),
   })
