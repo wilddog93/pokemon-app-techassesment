@@ -16,17 +16,17 @@ const options = [
   },
   {
     label: "Moves",
-    url: "/moves",
+    url: "/move",
     color: "bg-[#ED8775]"
   },
   {
     label: "Abilities",
-    url: "/abilities",
+    url: "/ability",
     color: "bg-[#6FB8F5]"
   },
   {
     label: "Genders",
-    url: "/genders",
+    url: "/gender",
     color: "bg-[#FCD55E]"
   },
   {
@@ -36,7 +36,7 @@ const options = [
   },
   {
     label: "Types",
-    url: "/types",
+    url: "/type",
     color: "bg-[#B57F75]"
   }
 ]

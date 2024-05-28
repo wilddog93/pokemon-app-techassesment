@@ -1,12 +1,6 @@
-// hooks/usePokemon.ts
-
 import { useQuery } from '@tanstack/react-query';
 import { getPokemon, getPokemons } from '@/utils/services/pokemon';
-
-type queryParams = {
-  limit: number;
-  offset: number;
-}
+import { queryParams } from '../types';
 
 export const usePokemons  = ({ limit, offset }: queryParams) => {
   return useQuery({
