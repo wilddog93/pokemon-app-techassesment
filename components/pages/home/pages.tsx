@@ -6,7 +6,10 @@ import { button as buttonStyle } from "@nextui-org/theme"
 import { Card, CardBody } from "@nextui-org/card";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
-import { FooterPage } from "../footer";
+import { useDisclosure } from "@nextui-org/modal";
+import { SearchComponent } from "../SearchComponent";
+import { useEffect, useState } from "react";
+import { FormValues } from "../pokemon/component/FormPokemon";
 
 const options = [
   {
@@ -42,6 +45,8 @@ const options = [
 ]
 
 export default function HomePage() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <main className="bg-white dark:bg-background dark:text-white w-full rounded-b-[2rem] shadow-sm">
       <section className="container mx-auto max-w-full px-8 flex-grow">
@@ -65,6 +70,7 @@ export default function HomePage() {
               startContent={
                 <MdSearch className="size-5 text-2xl text-default-400 pointer-events-none flex-shrink-0" />
               }
+              onClick={onOpenChange}
             />
 
           </div>
@@ -90,6 +96,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <SearchComponent 
+        size="4xl"
+        placement="top"
+        isOpen={isOpen} 
+        onOpenChange={onOpenChange}
+        classNames={{
+          body: "py-0"
+        }}
+      />
     </main>
   );
 }

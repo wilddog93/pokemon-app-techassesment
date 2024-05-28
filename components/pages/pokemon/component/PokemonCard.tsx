@@ -14,9 +14,10 @@ interface Props {
   isCart?: boolean;
   carts: any[];
   index?: any;
+  className?: string | undefined;
 }
 
-const PokemonCard: React.FC<Props> = ({ id, carts, isCart, index, ...props }) => {
+const PokemonCard: React.FC<Props> = ({ id, carts, isCart, index, className, ...props }) => {
   const { data, error, isLoading } = usePokemon(id);
 
   const totalPokemon: number = useMemo(() => {
@@ -33,7 +34,10 @@ const PokemonCard: React.FC<Props> = ({ id, carts, isCart, index, ...props }) =>
   }, [carts, index])
 
   if (isLoading) return (
-    <div className="flex items-center gap-2 p-2 rounded-2xl bg-white text-default-600">
+    <div className={clsx(
+      "flex items-center gap-2 p-2 rounded-2xl bg-white text-default-600",
+      className
+    )}>
       <Skeleton className="rounded-lg">
         <div className="size-16 rounded-lg bg-gray-300">loading...</div>
       </Skeleton>
@@ -55,13 +59,14 @@ const PokemonCard: React.FC<Props> = ({ id, carts, isCart, index, ...props }) =>
     <Link
         {...props}
         className={clsx(
-          "flex items-center gap-2 p-1 rounded-2xl bg-white text-default-600 hover:cursor-pointer overflow-hidden"
+          "flex items-center gap-2 p-1 rounded-2xl bg-white text-default-600 hover:cursor-pointer overflow-hidden",
+          className
         )}
         href={`/pokemon/${id}`}
       >
-        <img src={data.sprites.front_default} alt={data.name} />
+        <img src={data.sprites.front_default} className='object-cover object-center size-14' alt={data.name} />
         <div className='flex flex-col gap-1'>
-          <h1 className='font-bold text-2xl'>{data.name}</h1>
+          <h1 className='font-bold text-xl'>{data.name}</h1>
           <p className={clsx(
             "text-xs",
             isCart ? "hidden" : ""

@@ -8,6 +8,7 @@ const axios = AxiosInstance.create({
 const prefix = '/pokemon'
 
 export const getPokemon = async (nameOrId: string) => {
+  if (!nameOrId) return null;
   const response = await axios.get(`${prefix}/${nameOrId}`);
   return response.data;
 };
