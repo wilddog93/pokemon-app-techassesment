@@ -66,10 +66,10 @@ const DetailHero: React.FC<Props> = ({ id, carts, className, ...props }) => {
       </div>
 
       <div className="w-full flex gap-2 items-center justify-center">
-        <Skeleton className="w-1/5 rounded-lg">
+        <Skeleton className="w-1/2 sm:w-1/5 rounded-lg">
           <div className="size-36 rounded-lg bg-gray-300">loading...</div>
         </Skeleton>
-        <Skeleton className="w-1/5 rounded-lg">
+        <Skeleton className="w-1/2 sm:w-1/5 rounded-lg">
           <div className="size-36 rounded-lg bg-gray-300">loading...</div>
         </Skeleton>
       </div>

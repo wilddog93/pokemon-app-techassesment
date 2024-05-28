@@ -80,10 +80,10 @@ const FormPokemon: React.FC<Props> = ({ className, items, onClose, ...props }) =
       nickname: form.nickname
     };
     let items = pokemonCarts;
-    console.log(form, 'submit-form-1')
+    // console.log(form, 'submit-form-1')
     items.push(dataForm)
     let formDataString = JSON.stringify(items);
-    console.log(items, 'submit-form-res')
+    // console.log(items, 'submit-form-res')
     localStorage.setItem("pokemon-cart", formDataString)
     onClose()
   }

@@ -21,6 +21,7 @@ export const Header: React.FC<any> = () => {
         isIconOnly
         variant="light"
         className=""
+        onClick={() => router.push("/pokebag")}
       >
         <FaServer className="size-6 text-inherit rotate-180" />
       </Button>
