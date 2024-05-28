@@ -73,6 +73,12 @@ const DetailHero: React.FC<Props> = ({ id, carts, className, ...props }) => {
           <div className="size-36 rounded-lg bg-gray-300">loading...</div>
         </Skeleton>
       </div>
+
+      <Skeleton
+        className='max-w-max mx-auto rounded-lg h-12'
+      >
+        Catch the pokemon
+      </Skeleton>
     </div>
   );
   if (error) return <div>Error: {error.message}</div>;
