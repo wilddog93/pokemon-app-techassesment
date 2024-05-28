@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FormValues } from "../component/FormPokemon";
-import { Header } from "../component/Header";
+import { Header } from "../../Header";
 import PokemonCard from "../component/PokemonCard";
 import { Button } from "@nextui-org/button";
 import { MdDelete } from "react-icons/md";

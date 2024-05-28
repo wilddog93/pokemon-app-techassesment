@@ -15,7 +15,7 @@ import { useEffect, useMemo, useState } from "react";
 import { usePokemons } from "@/utils/hooks/pokemon";
 
 import { Spinner } from "@nextui-org/spinner";
-import { Header } from "./component/Header";
+import { Header } from "../Header";
 import { FormValues } from "./component/FormPokemon";
 
 const options = [

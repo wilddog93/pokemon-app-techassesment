@@ -8,7 +8,7 @@ import clsx from 'clsx';
 import { Card } from '@nextui-org/card';
 import { Skeleton } from '@nextui-org/skeleton';
 import { Chip } from '@nextui-org/chip';
-import { Header } from './Header';
+import { Header } from '../../Header';
 import { Button } from '@nextui-org/button';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
 import { Input } from '@nextui-org/input';
