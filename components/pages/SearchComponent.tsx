@@ -51,9 +51,9 @@ export const SearchComponent: FC<Props> = ({ isOpen, onOpenChange, size, placeme
       <ModalContent className="py-0">
         {(onClose) => (
           <Fragment>
-            <ModalHeader className="flex flex-col gap-1 text-2xl font-bold">What Pokemon are you looking for?.</ModalHeader>
+            <ModalHeader className="flex flex-col gap-1 sm:text-2xl font-bold">What Pokemon are you looking for?.</ModalHeader>
             <ModalBody>
-              <div className="w-full flex flex-col gap-4 sticky z-10 top-0 bg-white border-b pb-4">
+              <div className="w-full flex flex-col gap-4 sticky z-10 top-0 bg-white pb-4">
                 <Input
                   isClearable
                   size="lg"
@@ -79,7 +79,7 @@ export const SearchComponent: FC<Props> = ({ isOpen, onOpenChange, size, placeme
                   "text-default-400 font-bold text-lg",
                   data?.name || isLoading || error ? "" : "hidden"
                 )}>Search :</h1>
-                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {data?.name &&
                     <PokemonCard
                       id={data?.name}
@@ -97,7 +97,7 @@ export const SearchComponent: FC<Props> = ({ isOpen, onOpenChange, size, placeme
                 <h1 className="text-default-400 font-bold text-lg">Pokemon</h1>
               </div>
 
-              <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              <div className="w-full h-full max-h-[300px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {pokemons?.data?.length > 0 &&
                   pokemons?.data?.map((pokemon: any, index: number) => {
                     return (
