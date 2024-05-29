@@ -23,7 +23,7 @@ export default function PokemonDetailPage({ params }: Props) {
         id={params.detail}
       />
 
-      <div className="w-full h-full min-h-[350px] overflow-x-hidden overflow-auto bg-white flex flex-col gap-6 px-8 tracking-wider rounded-t-[2rem] shadow-sm">
+      <div className="w-full h-full min-h-[350px] max-h-[400px] overflow-x-hidden overflow-auto bg-white flex flex-col gap-6 px-8 tracking-wider rounded-t-[2rem] shadow-sm">
         <Tabs
           variant="underlined"
           aria-label="tab-pokemon"
